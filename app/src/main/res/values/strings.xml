@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">EarthquakeSMLiteApp</string>
+    <string name="google_map_key">AIzaSyAgWvPM1ZiB3tAtJzbojWaAwmkviv-MHYU</string>
+    <string-array name="cari_tempat">
+        <item>--Tempat Aman--</item>
+        <item>Taman</item>
+        <item>Stadion</item>
+        <item>Rumah Sakit</item>
+    </string-array>
+
+    <string name="compass_dial" translatable="false">Compass Dial</string>
+    <string name="compass_hands" translatable="false">Compass Hands</string>
+
+    <string name="sotw_north">N</string>
+    <string name="sotw_east">E</string>
+    <string name="sotw_south">S</string>
+    <string name="sotw_west">W</string>
+    <string name="sotw_northeast">NE</string>
+    <string name="sotw_northwest">NW</string>
+    <string name="sotw_southeast">SE</string>
+    <string name="sotw_southwest">SW</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Placeholder text for this example. -->
+    <string name="informasi">Terdapat dua jenis gempa di Indonesia dari skala kekuatannya. Jika kekuatan gempa itu kecil, mungkin tidak terlalu berefek besar, tapi jika kekuatannya besar seperti yang terjadi di NTB, tentu itu yang harus diperhatikan.\n\nKini teknologi semakin maju dan ada beberapa aplikasi info atau persiapan sudah dibuat untuk mengantisipasi kejadian seperti gempa.\n\nEarthquakeSMLiteApp adalah sebuah aplikasi sederhana terkait dengan persiapan kejadian gempa yang menerapkan peta dan juga sensor. Aplikasi ini dapat menunjukkan lokasi secara langsung, tempat aman terdekat, tes sensor getaran dan juga kompas.</string>
+    <string name="fitur">Nearby Place: Tempat terdekat berdasarkan lokasi pengguna. Tempat yang tersedia yaitu seperti taman dan stadion  untuk mencari tempat luas serta rumah sakit untuk korban.\n\nShake Sensor: Sensor yang dapat mendeteksi goyangan dan akan memunculkan getaran apabila terdeteksi.\n\nLocation Button: Tombol yang akan mengarahkan pengguna ke pengaturan lokasi yang menyediakan peringatan gempa bumi(pada beberapa perangkat).\n\nCompass: Sensor azimuth, gravity dan geomagnetic yang mendeteksi arah mata angin untuk mencari arah yang tepat.\n\nWidget: Widget yang disediakan ketika diklik akan langsung mengarahkan pengguna ke aplikasi dan membuka kompas.</string>
+
+    <!-- Text for the button in FragmentExample2. -->
+    <string name="open">Lihat Fitur</string>
+    <string name="close">Lihat Informasi Aplikasi</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>s
+</resources>

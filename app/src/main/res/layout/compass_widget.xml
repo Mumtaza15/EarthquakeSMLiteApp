@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.EarthquakeSMLiteApp.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.EarthquakeSMLiteApp.AppWidgetContainer">
+
+<!--    <TextView-->
+<!--        android:id="@+id/appwidget_text"-->
+<!--        style="@style/Widget.EarthquakeSMLiteApp.AppWidget.InnerView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:contentDescription="@string/appwidget_text"-->
+<!--        android:text="@string/appwidget_text"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold|italic" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/image_compass"-->
+<!--        android:layout_width="83dp"-->
+<!--        android:layout_height="122dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:background="@color/purple_500"-->
+<!--        android:src="@drawable/ic_compas" />-->
+
+    <Button
+        android:id="@+id/btn_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Compass" />
+
+</RelativeLayout>
