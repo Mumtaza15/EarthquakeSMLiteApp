@@ -1,13 +1,16 @@
 <resources>
-    <string name="app_name">EarthquakeSMLiteApp</string>
+    <string name="app_name">ESMLiteApp</string>
+    <!--    Map-->
     <string name="google_map_key">AIzaSyAgWvPM1ZiB3tAtJzbojWaAwmkviv-MHYU</string>
     <string-array name="cari_tempat">
-        <item>--Tempat Aman--</item>
-        <item>Taman</item>
-        <item>Stadion</item>
-        <item>Rumah Sakit</item>
+        <item>--Safe Place--</item>
+        <item>Park</item>
+        <item>Stadium</item>
+        <item>Hospital</item>
+
     </string-array>
 
+    <!--    Compass-->
     <string name="compass_dial" translatable="false">Compass Dial</string>
     <string name="compass_hands" translatable="false">Compass Hands</string>
 
@@ -19,17 +22,46 @@
     <string name="sotw_northwest">NW</string>
     <string name="sotw_southeast">SE</string>
     <string name="sotw_southwest">SW</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- Placeholder text for this example. -->
-    <string name="informasi">Terdapat dua jenis gempa di Indonesia dari skala kekuatannya. Jika kekuatan gempa itu kecil, mungkin tidak terlalu berefek besar, tapi jika kekuatannya besar seperti yang terjadi di NTB, tentu itu yang harus diperhatikan.\n\nKini teknologi semakin maju dan ada beberapa aplikasi info atau persiapan sudah dibuat untuk mengantisipasi kejadian seperti gempa.\n\nEarthquakeSMLiteApp adalah sebuah aplikasi sederhana terkait dengan persiapan kejadian gempa yang menerapkan peta dan juga sensor. Aplikasi ini dapat menunjukkan lokasi secara langsung, tempat aman terdekat, tes sensor getaran dan juga kompas.</string>
-    <string name="fitur">Nearby Place: Tempat terdekat berdasarkan lokasi pengguna. Tempat yang tersedia yaitu seperti taman dan stadion  untuk mencari tempat luas serta rumah sakit untuk korban.\n\nShake Sensor: Sensor yang dapat mendeteksi goyangan dan akan memunculkan getaran apabila terdeteksi.\n\nLocation Button: Tombol yang akan mengarahkan pengguna ke pengaturan lokasi yang menyediakan peringatan gempa bumi(pada beberapa perangkat).\n\nCompass: Sensor azimuth, gravity dan geomagnetic yang mendeteksi arah mata angin untuk mencari arah yang tepat.\n\nWidget: Widget yang disediakan ketika diklik akan langsung mengarahkan pengguna ke aplikasi dan membuka kompas.</string>
+    <string name="direction">Direction:</string>
 
-    <!-- Text for the button in FragmentExample2. -->
-    <string name="open">Lihat Fitur</string>
-    <string name="close">Lihat Informasi Aplikasi</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>s
+    <!--    Sensor-->
+    <string name="location_label">You can activate Earthquake Alert via the following(Location) button:</string>
+
+    <string name="tv_shake">Shake Sensor</string>
+
+    <string name="xValue">X Value:</string>
+    <string name="yValue">Y Value:</string>
+    <string name="zValue">Z Value:</string>
+
+    <string name="sCheck">Shake Check</string>
+
+    <string name="eWarn">Earthquake Warning</string>
+    <string name="sChecky">Yes, Shaking</string>
+    <string name="sCheckn">No, NOT Shaking</string>
+
+    <!--    Fragment-->
+    <string name="tv_appInfo">Earthquake Sensor Map Lite Application</string>
+    <string name="information">There are two types of earthquakes in Indonesia based on their strength scale. If the magnitude of the earthquake is small, it may not have a large effect, but if the magnitude is large, as happened in NTB, of course that must be considered. \n\nNow technology is advancing and there are several information applications or preparations that have been made to anticipate events such as an earthquake. \n\nEarthquakeSMLiteApp is a simple application related to earthquake event preparation that implements maps as well as sensors. This application can show the location in real time, the nearest safe place, test the vibration sensor and compass.</string>
+    <string name="fiture">Nearby Place: Nearby places based on user location. Available places are like parks and stadiums to find large areas and hospitals for victims.\n\nShake Sensor: A sensor that can detect shaking and will generate vibrations when detected.\n\nLocation Button: A button that will direct the user to location settings which provides earthquake alerts(on some devices).\n\nCompass: Azimuth, gravity and geomagnetic sensors which detect the cardinal directions to find the correct direction.\n\nWidget: The provided widget when clicked will direct the user to the application and open compass.</string>
+
+    <string name="fiture_label">See Features</string>
+
+    <string name="open">See Features</string>
+    <string name="close">See Application Information</string>
+
+    <!--    Menu-->
+    <string name="safePlace">Safe Places</string>
+    <string name="shakeSensor">Shake Sensor</string>
+    <string name="compass">Compass</string>
+    <string name="appInfo">App Information</string>
+    <string name="language">Language</string>
+    <string name="settings">Settings</string>
+
+    <!--    Widget-->
+    <string name="appwidget_text" translatable="false">Compass</string>
+    <string name="add_widget" translatable="false">Add widget</string>
+    <string name="app_widget_description" translatable="false">Compass widget that helps you find the right direction</string>
+    <string name="title_activity_nearby_location">NearbyLocation</string>
+
 </resources>

@@ -87,7 +87,7 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
             float floatSum = currentX + currentY + currentZ;
 
             if (floatSum > 16){
-                cShake.setText("Yes, Shaking");
+                cShake.setText(R.string.sChecky);
                 if ((xDifference > shakeThreshold && yDifference > shakeThreshold) ||
                         (xDifference > shakeThreshold && zDifference > shakeThreshold) ||
                         (yDifference > shakeThreshold && zDifference > shakeThreshold))
@@ -101,7 +101,7 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
                 }
             }
             else {
-                cShake.setText("No, NOT Shaking");
+                cShake.setText(R.string.sCheckn);
             }
 
 //            if ((xDifference > shakeThreshold && yDifference > shakeThreshold) ||

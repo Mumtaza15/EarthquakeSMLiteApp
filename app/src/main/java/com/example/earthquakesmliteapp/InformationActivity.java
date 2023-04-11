@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -76,6 +77,17 @@ public class InformationActivity extends AppCompatActivity {
 
         else if (item.getItemId() == R.id.informasi) {
             startActivity(new Intent(this, InformationActivity.class));
+        }
+        else if (item.getItemId() == R.id.bahasa) {
+            Intent locationIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(locationIntent);
+        }
+        else if (item.getItemId() == R.id.pengaturan) {
+            Intent locationIntent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(locationIntent);
+        }
+        else if (item.getItemId() == R.id.tes) {
+            startActivity(new Intent(this, NearbyLocation.class));
         }
         return true;
     }

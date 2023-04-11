@@ -2,8 +2,13 @@ package com.example.earthquakesmliteapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
@@ -100,4 +105,39 @@ public class CompassActivity extends AppCompatActivity {
             }
         };
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.tempatAman){
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        else if (item.getItemId() == R.id.sensorGetar) {
+            startActivity(new Intent(this, SensorActivity.class));
+        }
+
+        else if (item.getItemId() == R.id.kompas) {
+            startActivity(new Intent(this, CompassActivity.class));
+        }
+
+        else if (item.getItemId() == R.id.informasi) {
+            startActivity(new Intent(this, InformationActivity.class));
+        }
+        else if (item.getItemId() == R.id.bahasa) {
+            Intent locationIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(locationIntent);
+        }
+        else if (item.getItemId() == R.id.pengaturan) {
+            Intent locationIntent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(locationIntent);
+        }
+        return true;
+    }
+
 }

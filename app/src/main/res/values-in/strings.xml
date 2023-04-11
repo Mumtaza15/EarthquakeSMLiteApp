@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESMLiteApp</string>
+    <string name="google_map_key">AIzaSyAgWvPM1ZiB3tAtJzbojWaAwmkviv-MHYU</string>
+    <string name="sotw_north">Utara</string>
+    <string name="sotw_east">Timur</string>
+    <string name="sotw_south">Selatan</string>
+    <string name="sotw_west">Barat</string>
+    <string name="sotw_northeast">Timur Laut</string>
+    <string name="sotw_northwest">Barat Laut</string>
+    <string name="sotw_southeast">Tenggara</string>
+    <string name="sotw_southwest">Barat Daya</string>
+    <string name="direction">Arah:</string>
+    <string name="location_label">Anda dapat mengaktifkan Peringatan Gempa melalui tombol (Lokasi) berikut:</string>
+    <string name="tv_shake">Sensor Getar:</string>
+    <string name="xValue">Nilai X:</string>
+    <string name="yValue">Nilai Y:</string>
+    <string name="zValue">Nilai Z:</string>
+    <string name="sCheck">Cek Getaran:</string>
+    <string name="eWarn">" Peringatan Gempa"</string>
+    <string name="sChecky">Bergetar</string>
+    <string name="sCheckn">Tidak Bergetar</string>
+    <string name="tv_appInfo">Aplikasi Lite Peta Sensor Gempa</string>
+    <string name="information">Terdapat dua jenis gempa di Indonesia dari skala kekuatannya. Jika kekuatan gempa itu kecil, mungkin tidak terlalu berefek besar, tapi jika kekuatannya besar seperti yang terjadi di NTB, tentu itu yang harus diperhatikan.\n\nKini teknologi semakin maju dan ada beberapa aplikasi info atau persiapan sudah dibuat untuk mengantisipasi kejadian seperti gempa.\n\nEarthquakeSMLiteApp adalah sebuah aplikasi sederhana terkait dengan persiapan kejadian gempa yang menerapkan peta dan juga sensor. Aplikasi ini dapat menunjukkan lokasi secara langsung, tempat aman terdekat, tes sensor getaran dan juga kompas.</string>
+    <string name="fiture">Nearby Place: Tempat terdekat berdasarkan lokasi pengguna. Tempat yang tersedia yaitu seperti taman dan stadion  untuk mencari tempat luas serta rumah sakit untuk korban.\n\nShake Sensor: Sensor yang dapat mendeteksi goyangan dan akan memunculkan getaran apabila terdeteksi.\n\nLocation Button: Tombol yang akan mengarahkan pengguna ke pengaturan lokasi yang menyediakan peringatan gempa bumi(pada beberapa perangkat).\n\nCompass: Sensor azimuth, gravity dan geomagnetic yang mendeteksi arah mata angin untuk mencari arah yang tepat.\n\nWidget: Widget yang disediakan ketika diklik akan langsung mengarahkan pengguna ke aplikasi dan membuka kompas.</string>
+    <string name="fiture_label">Lihat Fitur</string>
+    <string name="open">Lihat Fitur</string>
+    <string name="close">" Lihat Informasi Aplikasi"</string>
+    <string name="safePlace">Tempat Aman</string>
+    <string name="shakeSensor">Sensor Getar</string>
+    <string name="compass">Kompas</string>
+    <string name="appInfo">Informasi App</string>
+    <string name="language">Bahasa</string>
+    <string name="settings">Pengaturan</string>
+</resources>

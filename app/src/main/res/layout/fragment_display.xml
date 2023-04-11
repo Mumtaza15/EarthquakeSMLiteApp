@@ -10,7 +10,7 @@
         android:id="@+id/iniTeks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/fitur"
+        android:text="@string/fiture"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="32dp"

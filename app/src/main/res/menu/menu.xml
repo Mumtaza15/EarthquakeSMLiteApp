@@ -4,37 +4,41 @@
     <item
         android:id="@+id/tempatAman"
         android:icon="@drawable/ic_place"
-        android:title="Tempat Aman"
+        android:title="@string/safePlace"
         app:showAsAction="always"
         />
 
     <item
         android:id="@+id/sensorGetar"
         android:icon="@drawable/ic_sensor"
-        android:title="Sensor Getaran"
+        android:title="@string/shakeSensor"
         app:showAsAction="always"
         />
 
     <item
         android:id="@+id/kompas"
         android:icon="@drawable/ic_compas"
-        android:title="Kompas"
+        android:title="@string/compass"
         app:showAsAction="always"
         />
 
     <item
         android:id="@+id/informasi"
         android:icon="@drawable/ic_appinfo"
-        android:title="Informasi Aplikasi"
+        android:title="@string/appInfo"
         />
 
     <item
         android:id="@+id/bahasa"
-        android:title="Bahasa"
+        android:title="@string/language"
         />
     <item
         android:id="@+id/pengaturan"
-        android:title="Pengaturan"
+        android:title="@string/settings"
+        />
+    <item
+        android:id="@+id/tes"
+        android:title="tes"
         />
 
 </menu>

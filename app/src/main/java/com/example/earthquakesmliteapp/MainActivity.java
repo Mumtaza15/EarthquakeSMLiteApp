@@ -19,6 +19,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -72,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         Spinner spinnerCari = findViewById(R.id.spPlace);
         pbMap = findViewById(R.id.pbMap);
 
+//        // Construct a PlacesClient
+//        Places.initialize(getApplicationContext(), getString(R.string.google_map_key));
+//        placesClient = Places.createClient(this);
+//
+//        // Construct a FusedLocationProviderClient.
+//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fMap);
         fragment.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -103,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                             "&radius=5000" +
                             "&types=" + xPlace +
                             "&key=" + getResources().getString(R.string.google_map_key);
+//                    String sb = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=mLatitude,mLongitude&radius=500&key=AIzaSyAgWvPM1ZiB3tAtJzbojWaAwmkviv-MHYU";
 //                    .initialize(getApplicationContext(),"@string/API_KEY");
                     startProg();
                     new PlacesTask().execute(sb);
@@ -152,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         }
     }
 
-    //Menerima request, jika berhasil langsung mengaktifkan lokasi
+//    Menerima request, jika berhasil langsung mengaktifkan lokasi
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -226,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 .strokeColor(0xffff0000)
                 .fillColor(0x55ff0000)));*/
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(8));
         stopProg();
     }
 
@@ -377,12 +387,16 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         }
 
         else if (item.getItemId() == R.id.informasi) {
-//            startActivity(new Intent(this, MainActivity.class));
-//            MainActivity.setLogout();
-            finish();
+            startActivity(new Intent(this, InformationActivity.class));
         }
-
-//            startActivity(new Intent(this, BuatBerita.class));
+        else if (item.getItemId() == R.id.bahasa) {
+            Intent locationIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(locationIntent);
+        }
+        else if (item.getItemId() == R.id.pengaturan) {
+            Intent locationIntent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(locationIntent);
+        }
         return true;
     }
 }
