@@ -2,6 +2,7 @@ package com.example.earthquakesmliteapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -12,7 +13,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -27,7 +34,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,6 +47,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PointOfInterest;
@@ -53,7 +63,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-public class MainActivity extends AppCompatActivity implements LocationListener {
+public class MainActivity extends AppCompatActivity implements LocationListener,SensorEventListener{
 
     GoogleMap mGoogleMap;
     ProgressBar pbMap;
@@ -63,6 +73,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     double mLatitude = 0;
     double mLongitude = 0;
+
+    private SensorManager mSensorManager;
+    private Sensor mSensorLight;
+    private TextView mTextSensorLight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +93,22 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //
 //        // Construct a FusedLocationProviderClient.
 //        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+        //Menampung sensor
+        List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
+        //String text sensor
+        StringBuilder sensorText = new StringBuilder();
+
+        mTextSensorLight = findViewById(R.id.label_light);
+
+        mSensorLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+
+        String sensor_error = "No sensor";
+        if (mSensorLight == null){
+            mTextSensorLight.setText(sensor_error);
+        }
 
 
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fMap);
@@ -100,12 +130,18 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long i) {
                 String xPlace ="";
+                MapStyleOptions parkStyle = MapStyleOptions.loadRawResourceStyle(getApplicationContext(), R.raw.park);
+                MapStyleOptions stadiumStyle = MapStyleOptions.loadRawResourceStyle(getApplicationContext(), R.raw.stadium);
+                MapStyleOptions hospitalStyle = MapStyleOptions.loadRawResourceStyle(getApplicationContext(), R.raw.hospital);
                 if (position == 1)
-                    xPlace = "park";
+//                    xPlace = "park";
+                    mGoogleMap.setMapStyle(parkStyle);
                 else if (position == 2)
-                    xPlace = "stadium";
+//                    xPlace = "stadium";
+                    mGoogleMap.setMapStyle(stadiumStyle);
                 else if (position == 3)
-                    xPlace = "hospital";
+//                    xPlace = "hospital";
+                    mGoogleMap.setMapStyle(hospitalStyle);
                 if (position != 0) {
                     String sb = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
                             "location=" + mLatitude + "," + mLongitude +
@@ -137,6 +173,52 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //                    Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 //        }
 //    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mSensorLight != null) {
+            mSensorManager.registerListener((SensorEventListener) this, mSensorLight,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        mSensorManager.unregisterListener((SensorListener) this);
+//    }
+
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        int sensorType = sensorEvent.sensor.getType();
+        float currentValue = sensorEvent.values[0];
+        switch (sensorType){
+            case Sensor.TYPE_LIGHT:
+//                mTextSensorLight.setText(String.format("Light sensor : %1$.2f lux",currentValue));
+
+//                changeBackgroundMapLight(currentValue);
+
+                break;
+            default:
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+
+//    private void changeBackgroundMapLight(float currentValue){
+////            RelativeLayout layout = findViewById(R.id.layout);
+//            if(currentValue >= 0 && currentValue < 20000){
+//                MapStyleOptions myStyle = MapStyleOptions.loadRawResourceStyle(this, R.raw.day);
+//                mGoogleMap.setMapStyle(myStyle);
+//            }else if (currentValue >= 20000 && currentValue <= 40000){
+//                MapStyleOptions myStyle = MapStyleOptions.loadRawResourceStyle(this, R.raw.night);
+//                mGoogleMap.setMapStyle(myStyle);
+//            }
+//        }
 
         private void initMap() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
@@ -375,18 +457,18 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==R.id.tempatAman){
-            startActivity(new Intent(this, MainActivity.class));
-        }
-        else if (item.getItemId() == R.id.sensorGetar) {
-            startActivity(new Intent(this, SensorActivity.class));
-        }
+//        if (item.getItemId()==R.id.tempatAman){
+//            startActivity(new Intent(this, MainActivity.class));
+//        }
+//        else if (item.getItemId() == R.id.sensorGetar) {
+//            startActivity(new Intent(this, SensorActivity.class));
+//        }
+//
+//        else if (item.getItemId() == R.id.kompas) {
+//            startActivity(new Intent(this, CompassActivity.class));
+//        }
 
-        else if (item.getItemId() == R.id.kompas) {
-            startActivity(new Intent(this, CompassActivity.class));
-        }
-
-        else if (item.getItemId() == R.id.informasi) {
+        if (item.getItemId() == R.id.informasi) {
             startActivity(new Intent(this, InformationActivity.class));
         }
         else if (item.getItemId() == R.id.bahasa) {

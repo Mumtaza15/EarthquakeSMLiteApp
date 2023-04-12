@@ -20,6 +20,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class SensorActivity extends AppCompatActivity implements SensorEventListener {
     private TextView xValue, yValue, zValue, cShake;
     private SensorManager sensorManager;
@@ -64,6 +66,24 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
                 Intent locationIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(locationIntent);
             }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.tempatAman);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.tempatAman:
+                    return true;
+                case R.id.sensorGetar:
+                    startActivity(new Intent(getApplicationContext(), SensorActivity.class));
+                    finish();
+                    return true;
+                case R.id.kompas:
+                    startActivity(new Intent(getApplicationContext(), CompassActivity.class));
+                    finish();
+                    return true;
+            }
+            return false;
         });
 
     }
@@ -152,18 +172,18 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==R.id.tempatAman){
-            startActivity(new Intent(this, MainActivity.class));
-        }
-        else if (item.getItemId() == R.id.sensorGetar) {
-            startActivity(new Intent(this, SensorActivity.class));
-        }
+//        if (item.getItemId()==R.id.tempatAman){
+//            startActivity(new Intent(this, MainActivity.class));
+//        }
+//        else if (item.getItemId() == R.id.sensorGetar) {
+//            startActivity(new Intent(this, SensorActivity.class));
+//        }
+//
+//        else if (item.getItemId() == R.id.kompas) {
+//            startActivity(new Intent(this, CompassActivity.class));
+//        }
 
-        else if (item.getItemId() == R.id.kompas) {
-            startActivity(new Intent(this, CompassActivity.class));
-        }
-
-        else if (item.getItemId() == R.id.informasi) {
+        if (item.getItemId() == R.id.informasi) {
             startActivity(new Intent(this, InformationActivity.class));
         }
         else if (item.getItemId() == R.id.bahasa) {

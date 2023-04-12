@@ -1,22 +1,27 @@
 package com.example.earthquakesmliteapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+
+import com.example.earthquakesmliteapp.Unused.NearbyLocation;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class InformationActivity extends AppCompatActivity {
 
-    private Button mButton;
+    private FloatingActionButton mButton;
 
     private boolean isFragmentDisplayed = true;
 
@@ -24,7 +29,16 @@ public class InformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
-        mButton = findViewById(R.id.buttonz);
+//        mButton = findViewById(R.id.buttonz);
+        mButton = findViewById(R.id.fab);
+
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showHelp();
+//            }
+//        });
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,10 +46,10 @@ public class InformationActivity extends AppCompatActivity {
                 Fragment fragment;
                 if (!isFragmentDisplayed) {
                     fragment = SimpleFragment.newInstance();
-                    mButton.setText(R.string.open);
+//                    mButton.setText(R.string.open);
                 } else {
                     fragment = DisplayFragment.newInstance();
-                    mButton.setText(R.string.close);
+//                    mButton.setText(R.string.close);
                 }
                 displayFragment(fragment);
                 isFragmentDisplayed = !isFragmentDisplayed;
@@ -43,7 +57,35 @@ public class InformationActivity extends AppCompatActivity {
         });
 
         displayFragment(SimpleFragment.newInstance());
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.tempatAman);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.tempatAman:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                    return true;
+                case R.id.sensorGetar:
+                    startActivity(new Intent(getApplicationContext(), SensorActivity.class));
+                    finish();
+                    return true;
+                case R.id.kompas:
+                    startActivity(new Intent(getApplicationContext(), CompassActivity.class));
+                    finish();
+                    return true;
+            }
+            return false;
+        });
     }
+
+//    private void showHelp() {
+//        // Create the intent.
+//        Intent helpIntent = new Intent(this, DisplayFragment.class);
+//        // Start the HelpActivity.
+//        startActivity(helpIntent);
+//    }
+
 
     private void displayFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -64,18 +106,18 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==R.id.tempatAman){
-            startActivity(new Intent(this, MainActivity.class));
-        }
-        else if (item.getItemId() == R.id.sensorGetar) {
-            startActivity(new Intent(this, SensorActivity.class));
-        }
+//        if (item.getItemId()==R.id.tempatAman){
+//            startActivity(new Intent(this, MainActivity.class));
+//        }
+//        else if (item.getItemId() == R.id.sensorGetar) {
+//            startActivity(new Intent(this, SensorActivity.class));
+//        }
+//
+//        else if (item.getItemId() == R.id.kompas) {
+//            startActivity(new Intent(this, CompassActivity.class));
+//        }
 
-        else if (item.getItemId() == R.id.kompas) {
-            startActivity(new Intent(this, CompassActivity.class));
-        }
-
-        else if (item.getItemId() == R.id.informasi) {
+        if (item.getItemId() == R.id.informasi) {
             startActivity(new Intent(this, InformationActivity.class));
         }
         else if (item.getItemId() == R.id.bahasa) {
@@ -86,9 +128,9 @@ public class InformationActivity extends AppCompatActivity {
             Intent locationIntent = new Intent(Settings.ACTION_SETTINGS);
             startActivity(locationIntent);
         }
-        else if (item.getItemId() == R.id.tes) {
-            startActivity(new Intent(this, NearbyLocation.class));
-        }
+//        else if (item.getItemId() == R.id.tes) {
+//            startActivity(new Intent(this, NearbyLocation.class));
+//        }
         return true;
     }
 }

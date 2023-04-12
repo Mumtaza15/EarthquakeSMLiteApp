@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,13 @@
     android:orientation="vertical"
     android:background="@drawable/infobg"
     tools:context=".MainActivity">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,24 +40,59 @@
     </FrameLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/buttonz"
-            android:layout_width="312dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="44dp"
-            android:background="@drawable/radius"
-            android:text="@string/fiture_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textAllCaps="false">
-        </Button>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <Button-->
+<!--            android:id="@+id/buttonz"-->
+<!--            android:layout_width="312dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="55dp"-->
+<!--            android:layout_marginEnd="55dp"-->
+<!--            android:layout_marginBottom="44dp"-->
+<!--            android:background="@drawable/radius"-->
+<!--            android:text="@string/fiture_label"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:textAllCaps="false">-->
+<!--            -->
+<!--        </Button>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="#FF9800"
+        android:src="@drawable/ic_infokan"/>
+            <TextView
+                android:id="@+id/line"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="#00000000"
+                android:textSize="4sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="80sp"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/radius2"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="#FF9800"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu" />
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.earthquakesmliteapp;
+package com.example.earthquakesmliteapp.Unused;
 
 import android.content.Context;
 import android.graphics.Bitmap;

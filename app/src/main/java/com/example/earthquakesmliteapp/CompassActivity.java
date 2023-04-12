@@ -93,8 +93,6 @@ public class CompassActivity extends AppCompatActivity {
         return new Compass.CompassListener() {
             @Override
             public void onNewAzimuth(final float azimuth) {
-                // UI updates only in UI thread
-                // https://stackoverflow.com/q/11140285/444966
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -115,18 +113,18 @@ public class CompassActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==R.id.tempatAman){
-            startActivity(new Intent(this, MainActivity.class));
-        }
-        else if (item.getItemId() == R.id.sensorGetar) {
-            startActivity(new Intent(this, SensorActivity.class));
-        }
+//        if (item.getItemId()==R.id.tempatAman){
+//            startActivity(new Intent(this, MainActivity.class));
+//        }
+//        else if (item.getItemId() == R.id.sensorGetar) {
+//            startActivity(new Intent(this, SensorActivity.class));
+//        }
+//
+//        else if (item.getItemId() == R.id.kompas) {
+//            startActivity(new Intent(this, CompassActivity.class));
+//        }
 
-        else if (item.getItemId() == R.id.kompas) {
-            startActivity(new Intent(this, CompassActivity.class));
-        }
-
-        else if (item.getItemId() == R.id.informasi) {
+        if (item.getItemId() == R.id.informasi) {
             startActivity(new Intent(this, InformationActivity.class));
         }
         else if (item.getItemId() == R.id.bahasa) {

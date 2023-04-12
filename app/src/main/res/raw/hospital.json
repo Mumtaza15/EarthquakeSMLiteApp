@@ -1,0 +1,11 @@
+[
+  {
+    "featureType": "poi.medical",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#00bbfa"
+      }
+    ]
+  }
+]

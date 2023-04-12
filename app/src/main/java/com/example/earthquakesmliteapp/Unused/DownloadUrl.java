@@ -1,4 +1,4 @@
-package com.example.earthquakesmliteapp;
+package com.example.earthquakesmliteapp.Unused;
 
 import android.util.Log;
 

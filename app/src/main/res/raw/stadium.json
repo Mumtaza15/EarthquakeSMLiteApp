@@ -1,0 +1,11 @@
+[
+  {
+    "featureType": "poi.sports_complex",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ddfa00"
+      }
+    ]
+  }
+]

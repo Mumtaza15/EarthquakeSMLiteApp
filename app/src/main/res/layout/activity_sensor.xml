@@ -8,164 +8,210 @@
     android:orientation="vertical"
     android:background="@drawable/sensorbg">
 
-    <TextView
-        android:id="@+id/tv_utama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48sp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/tv_shake"
-        android:textStyle="bold"
-        android:textSize="32sp"
-        android:textColor="#3F51B5"/>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/x_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120sp"
-        android:layout_marginStart="16sp"
-        android:text="@string/xValue"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#3F51B5"/>
-
-    <TextView
-        android:id="@+id/x_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4sp"
-        android:text="XValue"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="@+id/x_label"
-        app:layout_constraintStart_toEndOf="@+id/x_label"/>
-
-    <TextView
-        android:id="@+id/y_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginTop="24sp"
-        android:text="@string/yValue"
-        android:textSize="20sp"
-        android:textColor="#3F51B5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/x_value"/>
-
-    <TextView
-        android:id="@+id/y_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/x_value"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="4sp"
-        android:text="YValue"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="@+id/y_label"
-        app:layout_constraintStart_toEndOf="@+id/y_label" />
-
-    <TextView
-        android:id="@+id/z_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24sp"
-        android:layout_marginStart="16sp"
-        android:text="@string/zValue"
-        android:textSize="20sp"
-        android:textColor="#3F51B5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/y_value"/>
-
-    <TextView
-        android:id="@+id/z_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:layout_marginLeft="4sp"
-        android:text="ZValue"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="@+id/z_label"
-        app:layout_constraintStart_toEndOf="@+id/z_label"/>
-
-    <TextView
-        android:id="@+id/cek_shake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32sp"
-        android:layout_marginStart="16sp"
-        android:text="@string/sCheck"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/z_value"/>
-
-<!--    <TextView-->
-<!--        android:id="@+id/text1"-->
-<!--        android:layout_width="300sp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="48sp"-->
-<!--        tools:layout_editor_absoluteX="56sp"-->
-<!--        android:text="@string/location_label"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/cek_shake"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_location"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Peringatan Gempa Bumi"-->
-<!--        android:layout_marginTop="4sp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/text1"-->
-<!--        tools:layout_editor_absoluteX="96sp"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/line"
-        android:layout_height="wrap_content"
+    <ScrollView
         android:layout_width="match_parent"
-        android:text="Vertical Line"
-        android:background="#3F51B5"
-        android:textSize="4sp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="360sp"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_utama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48sp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tv_shake"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:textColor="#3F51B5"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/x_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120sp"
+            android:layout_marginStart="16sp"
+            android:text="@string/xValue"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#3F51B5"/>
+
+        <TextView
+            android:id="@+id/x_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4sp"
+            android:text="XValue"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/x_label"
+            app:layout_constraintStart_toEndOf="@+id/x_label"/>
+
+        <TextView
+            android:id="@+id/y_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="24sp"
+            android:text="@string/yValue"
+            android:textSize="20sp"
+            android:textColor="#3F51B5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/x_value"/>
+
+        <TextView
+            android:id="@+id/y_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/x_value"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="4sp"
+            android:text="YValue"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/y_label"
+            app:layout_constraintStart_toEndOf="@+id/y_label" />
+
+        <TextView
+            android:id="@+id/z_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24sp"
+            android:layout_marginStart="16sp"
+            android:text="@string/zValue"
+            android:textSize="20sp"
+            android:textColor="#3F51B5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/y_value"/>
+
+        <TextView
+            android:id="@+id/z_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_marginLeft="4sp"
+            android:text="ZValue"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/z_label"
+            app:layout_constraintStart_toEndOf="@+id/z_label"/>
+
+        <TextView
+            android:id="@+id/cek_shake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32sp"
+            android:layout_marginStart="16sp"
+            android:text="@string/sCheck"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/z_value"/>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text1"-->
+    <!--        android:layout_width="300sp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="48sp"-->
+    <!--        tools:layout_editor_absoluteX="56sp"-->
+    <!--        android:text="@string/location_label"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/cek_shake"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_location"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Peringatan Gempa Bumi"-->
+    <!--        android:layout_marginTop="4sp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/text1"-->
+    <!--        tools:layout_editor_absoluteX="96sp"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Vertical Line"
+            android:background="#3F51B5"
+            android:textSize="4sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="360sp"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="48sp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="@string/location_label"
+            android:textColor="#3F51B5"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8sp"
+            android:background="@drawable/radius"
+            android:backgroundTint="#3F51B5"
+            android:text="@string/eWarn"/>
+
+        <ImageView
+            android:id="@+id/info_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8sp"
+            android:src="@drawable/earthquake_alerts"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="#00000000"
+                android:layout_below="@+id/info_img"
+                android:textSize="4sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="80sp"/>
+
+        </RelativeLayout>
+</ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/line"
-        android:layout_marginTop="20sp"
-        android:layout_marginLeft="48sp"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:text="@string/location_label"
-        android:textColor="#3F51B5"
-        android:textStyle="bold"/>
-
-    <Button
-        android:id="@+id/btn_location"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/text1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8sp"
-        android:background="@drawable/radius"
-        android:backgroundTint="#3F51B5"
-        android:text="@string/eWarn"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/radius2"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="#FF9800"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu" />
 </RelativeLayout>

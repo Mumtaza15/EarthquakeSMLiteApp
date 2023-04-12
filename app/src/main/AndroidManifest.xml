@@ -47,7 +47,7 @@
         </receiver>
 
         <activity
-            android:name=".NearbyLocation"
+            android:name=".Unused.NearbyLocation"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

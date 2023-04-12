@@ -1,0 +1,10 @@
+[
+  {
+    "featureType": "transit.line",
+    "stylers": [
+      {
+        "color": "#00bbfa"
+      }
+    ]
+  }
+]

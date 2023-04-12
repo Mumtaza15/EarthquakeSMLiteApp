@@ -15,6 +15,7 @@ import android.content.Context;
  * https://www.geeksforgeeks.org/find-closest-number-array/
  */
 public class SOTWFormatter {
+    // SOTW is for "side of the world"
     private static final int[] sides = {0, 45, 90, 135, 180, 225, 270, 315, 360};
     private static String[] names = null;
 
@@ -54,9 +55,6 @@ public class SOTWFormatter {
      * @return index of the closest element
      */
     private static int findClosestIndex(int target) {
-        // in the original binary search https://www.geeksforgeeks.org/find-closest-number-array/
-        // you will see more steps to reduce the time
-        // in in this particular case the corner conditions are never true
         // e.g. azimuth is never negative, so there is no point to check
         // these conditions. Also we don't check if target is equal to element of array,
         // because most of the time it's not.
